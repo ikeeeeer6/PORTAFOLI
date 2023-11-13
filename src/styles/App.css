@@ -13,6 +13,26 @@
   }
 }
 
+.rojo{
+  color: red;
+}
+
+.verde{
+  color: green;
+}
+
+.primerDiv{
+  width: 50%;
+  height: auto;
+  background-color:#61dafb;
+  float: left;
+}
+
+.divTotal{
+  width: 100%;
+  height: 200px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
