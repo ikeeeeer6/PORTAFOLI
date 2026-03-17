@@ -1,13 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import { Header } from './components/Header';
-import { ImatgeIntroduccio } from './components/ImatgeIntroduccio';
+import { Hero } from './components/Hero';
+import { CarsList } from './components/CarsList';
+import { Footer } from './components/Footer';
+import { carsData } from './data/cars';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
     <React.StrictMode>
         <Header />
-        <ImatgeIntroduccio />
-    </React.StrictMode>,
-    document.getElementById('root')
+        <Hero />
+        <CarsList cars={carsData} />
+        <Footer />
+    </React.StrictMode>
 );

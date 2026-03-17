@@ -1,16 +1,21 @@
-import React from 'react'
-import '../styles/header.css'
-import { BarraMenuHeader } from  '../components/ComponentsHeader/BarraMenuHeader'
+import React from 'react';
+import '../styles/header.css';
 
 export const Header = () => {
   return (
-    <div className='header'>
-
-      <BarraMenuHeader width='58%' height='65px' value='LOGO'/>
-      <BarraMenuHeader width='15%' height='65px' textAlign='center' value='Formació Acadèmica'/>
-      <BarraMenuHeader width='10%' height='65px' textAlign='center' value='Experiència Laboral'/>
-      <BarraMenuHeader width='10%' height='65px' textAlign='center' value='Llenguatges'/>
-      <BarraMenuHeader width='7%' height='65px' textAlign='center' value='Sobre mi'/>
-    </div>
-  )
-}
+    <header className="header">
+      <div className="header-container">
+        <div className="logo">
+          <h1>🚗 AutoHub</h1>
+        </div>
+        <nav className="nav">
+          <ul>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#cars">Coches</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
+};
