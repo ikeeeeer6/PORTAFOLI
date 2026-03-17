@@ -10,9 +10,11 @@ export const carsData = [
     transmission: "Automática",
     color: "Negro",
     images: [
-      "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=500&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=400&fit=crop"
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1617469767053-d3b523a0b982?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=500&h=400&fit=crop"
     ],
     description: "SUV de lujo con tecnología avanzada"
   },
@@ -26,9 +28,11 @@ export const carsData = [
     transmission: "Automática",
     color: "Plata",
     images: [
-      "https://images.unsplash.com/photo-1606611013016-969c19d4a42f?w=500&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=500&h=400&fit=crop"
+      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1590362891991-f776e747a588?w=500&h=400&fit=crop"
     ],
     description: "Sedán elegante y deportivo"
   },
@@ -42,9 +46,11 @@ export const carsData = [
     transmission: "Automática",
     color: "Blanco",
     images: [
-      "https://images.unsplash.com/photo-1606611013016-969c19d4a42f?w=500&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=500&h=400&fit=crop"
+      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1571607388263-1044f9ea01dd?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1547038577-da80abbc4f19?w=500&h=400&fit=crop"
     ],
     description: "Sedán premium con diseño moderno"
   },
@@ -58,9 +64,11 @@ export const carsData = [
     transmission: "Automática",
     color: "Rojo",
     images: [
-      "https://images.unsplash.com/photo-1560958089-b8a64c_643f5c?w=500&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=500&h=400&fit=crop"
+      "https://images.unsplash.com/photo-1536700503339-1e4b06520771?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1561580125-028ee3bd62eb?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=500&h=400&fit=crop"
     ],
     description: "Vehículo eléctrico de última generación"
   },
@@ -74,9 +82,11 @@ export const carsData = [
     transmission: "Manual",
     color: "Azul",
     images: [
-      "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=500&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1606611013016-969c19d4a42f?w=500&h=400&fit=crop"
+      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1550355291-bbee04a92027?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1567818735868-e71b99932e29?w=500&h=400&fit=crop"
     ],
     description: "Coche compacto fiable y práctico"
   },
@@ -90,9 +100,11 @@ export const carsData = [
     transmission: "Automática",
     color: "Amarillo",
     images: [
-      "https://images.unsplash.com/photo-1606611013016-969c19d4a42f?w=500&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=500&h=400&fit=crop"
+      "https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1519648023493-d82b813ec929?w=500&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1546614042-7df3c24c9e5d?w=500&h=400&fit=crop"
     ],
     description: "Deportivo de lujo de alto rendimiento"
   }

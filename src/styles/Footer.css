@@ -1,8 +1,9 @@
 /* Footer Styles */
 .footer {
-  background: #222;
-  color: #fff;
+  background: #161616;
+  color: #c0c0c0;
   padding: 3rem 2rem 1rem;
+  border-top: 1px solid #282828;
 }
 
 .footer-container {
@@ -14,10 +15,12 @@
 }
 
 .footer-section h3 {
-  font-size: 1.2rem;
+  font-size: 0.75rem;
   margin-bottom: 1rem;
-  color: #667eea;
-  font-weight: bold;
+  color: #909090;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
 .footer-section p {
@@ -43,7 +46,7 @@
 }
 
 .footer-section a:hover {
-  color: #667eea;
+  color: #c8c8c8;
 }
 
 .social-links {
@@ -55,21 +58,24 @@
 .social-links a {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: #333;
-  border-radius: 5px;
-  transition: all 0.3s ease;
+  background: transparent;
+  border: 1px solid #383838;
+  border-radius: 3px;
+  color: #707070;
+  transition: all 0.2s ease;
 }
 
 .social-links a:hover {
-  background: #667eea;
-  color: white;
+  background: #c8c8c8;
+  color: #111111;
+  border-color: #c8c8c8;
 }
 
 .footer-bottom {
-  border-top: 1px solid #444;
+  border-top: 1px solid #252525;
   padding-top: 2rem;
   text-align: center;
-  color: #999;
+  color: #424242;
   max-width: 1200px;
   margin: 0 auto;
 }
