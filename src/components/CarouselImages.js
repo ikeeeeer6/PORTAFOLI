@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../styles/CarouselImages.css';
 
-export const CarouselImages = ({ images, carName }) => {
+export const CarouselImages = ({ images, carName, onImageClick }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -20,10 +20,12 @@ export const CarouselImages = ({ images, carName }) => {
       <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index} className="carousel-slide">
-            <img 
-              src={image} 
-              alt={`${carName} - Imagen ${index + 1}`} 
+            <img
+              src={image}
+              alt={`${carName} - Imagen ${index + 1}`}
               className="carousel-image"
+              onClick={() => onImageClick && onImageClick(index)}
+              style={{ cursor: onImageClick ? 'zoom-in' : 'default' }}
             />
           </div>
         ))}

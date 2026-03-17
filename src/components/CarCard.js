@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { CarouselImages } from './CarouselImages';
 import '../styles/CarCard.css';
 
-export const CarCard = ({ car }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
+export const CarCard = ({ car, onSelect }) => {
   return (
     <div className="car-card">
-      <CarouselImages images={car.images} carName={car.name} />
-      
+      <CarouselImages
+        images={car.images}
+        carName={car.name}
+      />
+
       <div className="car-info">
         <h2 className="car-name">{car.name}</h2>
-        
+
         <p className="car-description">{car.description}</p>
-        
+
         <div className="car-specs">
           <div className="spec">
             <span className="spec-label">Año:</span>
@@ -41,19 +42,9 @@ export const CarCard = ({ car }) => {
           <p className="price">${car.price.toLocaleString()}</p>
         </div>
 
-        <button 
-          className="btn-primary"
-          onClick={() => setIsExpanded(!isExpanded)}
-        >
-          {isExpanded ? 'Ver menos' : 'Ver detalles'}
+        <button className="btn-primary" onClick={() => onSelect(car)}>
+          Ver detalles
         </button>
-
-        {isExpanded && (
-          <div className="expanded-details">
-            <p>¡Contacta con nosotros para más información sobre este vehículo!</p>
-            <button className="btn-contact">Contactar</button>
-          </div>
-        )}
       </div>
     </div>
   );
