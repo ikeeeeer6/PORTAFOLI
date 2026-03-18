@@ -10,7 +10,8 @@
 }
 
 .header-container {
-  max-width: 1200px;
+  height: 100px;
+  max-width: 1700px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -28,7 +29,7 @@
 }
 
 .header-logo {
-  height: 95px;
+  height: 250px;
   width: auto;
   display: block;
   object-fit: contain;

@@ -39,7 +39,7 @@ export const CarCard = ({ car, onSelect }) => {
         </div>
 
         <div className="car-price">
-          <p className="price">${car.price.toLocaleString()}</p>
+          <p className="price">{Number(car.price).toLocaleString('es-ES')} €</p>
         </div>
 
         <button className="btn-primary" onClick={() => onSelect(car)}>

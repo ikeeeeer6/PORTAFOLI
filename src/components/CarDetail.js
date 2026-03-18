@@ -81,7 +81,7 @@ export const CarDetail = ({ car, onBack }) => {
           {/* Precio */}
           <div className="detail-price-block">
             <span className="detail-price-label">Precio</span>
-            <span className="detail-price">${car.price.toLocaleString()}</span>
+            <span className="detail-price">{Number(car.price).toLocaleString('es-ES')} €</span>
           </div>
 
           {/* Especificaciones */}

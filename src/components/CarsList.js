@@ -6,22 +6,22 @@ import '../styles/Filters.css';
 export const CarsList = ({ cars, onSelect }) => {
   const [filters, setFilters] = useState({
     search: '',
+    minYear: '',
+    maxKm: '',
     fuel: '',
-    transmission: '',
     maxPrice: '',
     sortBy: '',
   });
 
   const fuels = [...new Set(cars.map(c => c.fuel))];
-  const transmissions = [...new Set(cars.map(c => c.transmission))];
-  const maxCarPrice = Math.max(...cars.map(c => c.price));
+  const maxCarPrice = cars.length > 0 ? Math.max(...cars.map(c => c.price)) : 0;
 
   const handleChange = (e) => {
     setFilters(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const clearFilters = () => {
-    setFilters({ search: '', fuel: '', transmission: '', maxPrice: '', sortBy: '' });
+    setFilters({ search: '', minYear: '', maxKm: '', fuel: '', maxPrice: '', sortBy: '' });
   };
 
   const filtered = useMemo(() => {
@@ -31,11 +31,14 @@ export const CarsList = ({ cars, onSelect }) => {
       const q = filters.search.toLowerCase();
       result = result.filter(c => c.name.toLowerCase().includes(q));
     }
+    if (filters.minYear) {
+      result = result.filter(c => c.year >= Number(filters.minYear));
+    }
+    if (filters.maxKm) {
+      result = result.filter(c => c.km <= Number(filters.maxKm));
+    }
     if (filters.fuel) {
       result = result.filter(c => c.fuel === filters.fuel);
-    }
-    if (filters.transmission) {
-      result = result.filter(c => c.transmission === filters.transmission);
     }
     if (filters.maxPrice) {
       result = result.filter(c => c.price <= Number(filters.maxPrice));
@@ -62,8 +65,33 @@ export const CarsList = ({ cars, onSelect }) => {
           <input
             type="text"
             name="search"
-            placeholder="Buscar por nombre..."
+            placeholder="Buscar por marca o modelo..."
             value={filters.search}
+            onChange={handleChange}
+            className="filter-input"
+          />
+        </div>
+
+        <div className="filter-group">
+          <input
+            type="number"
+            name="minYear"
+            placeholder="Año mínimo"
+            min="1950"
+            max="2100"
+            value={filters.minYear}
+            onChange={handleChange}
+            className="filter-input"
+          />
+        </div>
+
+        <div className="filter-group">
+          <input
+            type="number"
+            name="maxKm"
+            placeholder="Kilómetros máximos"
+            min="0"
+            value={filters.maxKm}
             onChange={handleChange}
             className="filter-input"
           />
@@ -76,16 +104,9 @@ export const CarsList = ({ cars, onSelect }) => {
           </select>
         </div>
 
-        <div className="filter-group">
-          <select name="transmission" value={filters.transmission} onChange={handleChange} className="filter-select">
-            <option value="">Transmisión</option>
-            {transmissions.map(t => <option key={t} value={t}>{t}</option>)}
-          </select>
-        </div>
-
         <div className="filter-group filter-price">
           <label className="filter-label">
-            Precio máx: {filters.maxPrice ? `$${Number(filters.maxPrice).toLocaleString()}` : 'Todos'}
+            Precio max.: {filters.maxPrice ? `${Number(filters.maxPrice).toLocaleString('es-ES')} €` : 'Todos'}
           </label>
           <input
             type="range"

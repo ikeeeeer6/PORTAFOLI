@@ -91,8 +91,19 @@
   background: #2f2f2f;
 }
 
+.admin-form-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
 .admin-btn.logout {
   background: transparent;
+}
+
+.admin-btn.cancel {
+  border-color: #5c5c5c;
+  color: #cecece;
 }
 
 .form-message {
@@ -154,6 +165,21 @@
   font-size: 0.85rem;
 }
 
+.admin-car-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.admin-btn.edit {
+  border-color: #3d5f83;
+  color: #b6d8ff;
+}
+
+.admin-btn.edit:hover {
+  background: #1f2d3d;
+}
+
 .admin-btn.delete {
   border-color: #704242;
   color: #ffb3b3;
@@ -161,6 +187,35 @@
 
 .admin-btn.delete:hover {
   background: #3b1f1f;
+}
+
+.admin-edit-images-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.8rem;
+}
+
+.admin-edit-image-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.55rem;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  background: #121212;
+}
+
+.admin-edit-image-preview {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #2d2d2d;
+}
+
+.admin-edit-image-item .admin-btn {
+  align-self: stretch;
+  text-align: center;
 }
 
 @media (max-width: 768px) {

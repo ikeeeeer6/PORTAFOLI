@@ -98,6 +98,39 @@ function App() {
     saveCarsToStorage(updatedCars);
   };
 
+  const handleUpdateCar = (carId, updatedCarData) => {
+    const updatedCars = cars.map((car) => {
+      if (car.id !== carId) {
+        return car;
+      }
+
+      const hasUpdatedImages = Array.isArray(updatedCarData.images) && updatedCarData.images.length > 0;
+
+      return {
+        ...car,
+        name: updatedCarData.name,
+        price: Number(updatedCarData.price),
+        year: Number(updatedCarData.year),
+        km: Number(updatedCarData.km),
+        fuel: updatedCarData.fuel,
+        transmission: updatedCarData.transmission,
+        color: updatedCarData.color,
+        description: updatedCarData.description,
+        images: hasUpdatedImages
+          ? updatedCarData.images
+          : ['https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=500&h=400&fit=crop']
+      };
+    });
+
+    setCars(updatedCars);
+    saveCarsToStorage(updatedCars);
+
+    if (selectedCar && selectedCar.id === carId) {
+      const refreshedSelectedCar = updatedCars.find((car) => car.id === carId) || null;
+      setSelectedCar(refreshedSelectedCar);
+    }
+  };
+
   const handleDeleteCar = (carId) => {
     const updatedCars = cars.filter((car) => car.id !== carId);
     setCars(updatedCars);
@@ -114,7 +147,13 @@ function App() {
       {selectedCar ? (
         <CarDetail car={selectedCar} onBack={() => setSelectedCar(null)} />
       ) : showAdmin ? (
-        <AdminAccess cars={cars} onAddCar={handleAddCar} onDeleteCar={handleDeleteCar} onClose={handleCloseAdmin} />
+        <AdminAccess
+          cars={cars}
+          onAddCar={handleAddCar}
+          onUpdateCar={handleUpdateCar}
+          onDeleteCar={handleDeleteCar}
+          onClose={handleCloseAdmin}
+        />
       ) : (
         <>
           <Hero />

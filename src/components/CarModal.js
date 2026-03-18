@@ -70,7 +70,7 @@ export const CarModal = ({ car, startIndex, onClose }) => {
 
             <div className="modal-price">
               <span className="modal-price-label">Precio</span>
-              <span className="modal-price-value">${car.price.toLocaleString()}</span>
+              <span className="modal-price-value">{Number(car.price).toLocaleString('es-ES')} €</span>
             </div>
 
             <div className="modal-specs-grid">

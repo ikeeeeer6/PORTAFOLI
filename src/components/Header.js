@@ -7,7 +7,7 @@ export const Header = ({ onOpenAdmin }) => {
     <header className="header">
       <div className="header-container">
         <div className="logo">
-          <img src={logo} alt="BCN MOTOR GROUP" className="header-logo" />
+          <img src={logo} alt="BCN GROUP MOTORS" className="header-logo" />
         </div>
         <nav className="nav">
           <ul>

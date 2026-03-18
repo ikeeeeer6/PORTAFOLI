@@ -23,13 +23,14 @@
 
 /* Override slick-carousel default styles */
 .carousel-container .slick-dots {
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 10px;
   background: rgba(0, 0, 0, 0.5);
   padding: 8px;
   border-radius: 20px;
   width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
 }
 
 .carousel-container .slick-dots li button:before {
