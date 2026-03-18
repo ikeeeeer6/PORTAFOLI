@@ -6,7 +6,7 @@ export const Footer = () => {
     <footer id="contact" className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <h3>AutoHub</h3>
+          <h3>BCN MOTOR GROUP</h3>
           <p>Tu plataforma de confianza para comprar y vender coches</p>
         </div>
         
@@ -21,7 +21,7 @@ export const Footer = () => {
         
         <div className="footer-section">
           <h3>Contacto</h3>
-          <p>📧 info@autohub.com</p>
+          <p>📧 info@bcnmotorgroup.com</p>
           <p>📞 +34 666 777 888</p>
           <p>📍 Barcelona, España</p>
         </div>
@@ -37,7 +37,7 @@ export const Footer = () => {
       </div>
       
       <div className="footer-bottom">
-        <p>&copy; 2024 AutoHub. Todos los derechos reservados.</p>
+        <p>&copy; 2024 BCN MOTOR GROUP. Todos los derechos reservados.</p>
       </div>
     </footer>
   );
