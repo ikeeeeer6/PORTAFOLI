@@ -9,20 +9,43 @@ import { AdminAccess } from './components/AdminAccess';
 import { carsData } from './data/cars';
 
 const CUSTOM_CARS_KEY = 'customCars';
+const DELETED_BASE_CARS_KEY = 'deletedBaseCars';
 
 const getCarsFromStorage = () => {
   const storedCars = localStorage.getItem(CUSTOM_CARS_KEY);
+  const storedDeletedBaseCars = localStorage.getItem(DELETED_BASE_CARS_KEY);
+
+  let deletedBaseIds = [];
+  if (storedDeletedBaseCars) {
+    try {
+      deletedBaseIds = JSON.parse(storedDeletedBaseCars);
+    } catch {
+      deletedBaseIds = [];
+    }
+  }
+
+  const visibleBaseCars = carsData.filter((car) => !deletedBaseIds.includes(car.id));
 
   if (!storedCars) {
-    return carsData;
+    return visibleBaseCars;
   }
 
   try {
     const parsedCars = JSON.parse(storedCars);
-    return [...parsedCars, ...carsData];
+    return [...parsedCars, ...visibleBaseCars];
   } catch {
-    return carsData;
+    return visibleBaseCars;
   }
+};
+
+const saveCarsToStorage = (updatedCars) => {
+  const customCars = updatedCars.filter((car) => !carsData.some((baseCar) => baseCar.id === car.id));
+  const deletedBaseIds = carsData
+    .filter((baseCar) => !updatedCars.some((car) => car.id === baseCar.id))
+    .map((car) => car.id);
+
+  localStorage.setItem(CUSTOM_CARS_KEY, JSON.stringify(customCars));
+  localStorage.setItem(DELETED_BASE_CARS_KEY, JSON.stringify(deletedBaseIds));
 };
 
 function App() {
@@ -32,7 +55,7 @@ function App() {
 
   useEffect(() => {
     const handleStorageUpdate = (event) => {
-      if (event.key === CUSTOM_CARS_KEY) {
+      if (event.key === CUSTOM_CARS_KEY || event.key === DELETED_BASE_CARS_KEY) {
         setCars(getCarsFromStorage());
       }
     };
@@ -72,9 +95,17 @@ function App() {
 
     const updatedCars = [newCar, ...cars];
     setCars(updatedCars);
+    saveCarsToStorage(updatedCars);
+  };
 
-    const customCars = updatedCars.filter((car) => !carsData.some((baseCar) => baseCar.id === car.id));
-    localStorage.setItem(CUSTOM_CARS_KEY, JSON.stringify(customCars));
+  const handleDeleteCar = (carId) => {
+    const updatedCars = cars.filter((car) => car.id !== carId);
+    setCars(updatedCars);
+    saveCarsToStorage(updatedCars);
+
+    if (selectedCar && selectedCar.id === carId) {
+      setSelectedCar(null);
+    }
   };
 
   return (
@@ -83,7 +114,7 @@ function App() {
       {selectedCar ? (
         <CarDetail car={selectedCar} onBack={() => setSelectedCar(null)} />
       ) : showAdmin ? (
-        <AdminAccess onAddCar={handleAddCar} onClose={handleCloseAdmin} />
+        <AdminAccess cars={cars} onAddCar={handleAddCar} onDeleteCar={handleDeleteCar} onClose={handleCloseAdmin} />
       ) : (
         <>
           <Hero />

@@ -15,7 +15,7 @@ const initialFormState = {
   description: ''
 };
 
-export const AdminAccess = ({ onAddCar, onClose }) => {
+export const AdminAccess = ({ cars, onAddCar, onDeleteCar, onClose }) => {
   const [credentials, setCredentials] = useState({ user: '', password: '' });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loginError, setLoginError] = useState('');
@@ -72,6 +72,13 @@ export const AdminAccess = ({ onAddCar, onClose }) => {
     setTimeout(() => {
       setSuccessMessage('');
     }, 2500);
+  };
+
+  const handleDeleteClick = (carId, carName) => {
+    const shouldDelete = window.confirm(`¿Seguro que quieres eliminar "${carName}"?`);
+    if (shouldDelete) {
+      onDeleteCar(carId);
+    }
   };
 
   return (
@@ -197,6 +204,31 @@ export const AdminAccess = ({ onAddCar, onClose }) => {
 
               <button className="admin-btn" type="submit">Guardar coche</button>
             </form>
+
+            <div className="admin-cars-manager">
+              <h3>Coches publicados</h3>
+              {cars.length === 0 ? (
+                <p className="form-help">No hay coches disponibles.</p>
+              ) : (
+                <div className="admin-cars-list">
+                  {cars.map((car) => (
+                    <div className="admin-car-item" key={car.id}>
+                      <div className="admin-car-meta">
+                        <strong>{car.name}</strong>
+                        <span>{car.year} | {car.fuel} | ${car.price.toLocaleString()}</span>
+                      </div>
+                      <button
+                        type="button"
+                        className="admin-btn delete"
+                        onClick={() => handleDeleteClick(car.id, car.name)}
+                      >
+                        Eliminar
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </>
         )}
       </div>
